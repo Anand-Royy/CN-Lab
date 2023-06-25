@@ -29,7 +29,8 @@ int main() {
     if (acknowledgement == 0) {
       int numAckedFrames = rand() % windowSize +
                            1; // Simulating random number of frames acknowledged
-      cout << numAckedFrames << " frame(s) Acknowledged." << endl;
+      for (int k = base; k < numAckedFrames + base && k <= totalFrames; k++)
+        cout << "Frame " << k << " Acknowledged." << endl;
 
       base += numAckedFrames;
       nextSeqNum = base;
